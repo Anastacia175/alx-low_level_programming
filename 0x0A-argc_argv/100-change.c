@@ -14,91 +14,43 @@
 int main(int argc, char *argv[])
 
 {
+	int num, j, result;
 
-int num, j, result;
+	int coins[] = {25, 10, 5, 2, 1};
 
-int coins[] = {25, 10, 5, 2, 1};
 
-if (argc != 2)
-{
-printf("Error\n");
-return (1);
-}
+	if (argc != 2)
+	{
+		printf("Error\n");
 
-num = atoi(argv[1]);
+		return (1);
 
-result = 0;
+	}
 
-if (num < 0)
+	num = atoi(argv[1]);
+	result = 0;
 
-{
-printf("0\n");
-return (0);
+	if (num < 0)
 
-}
+	{
 
-for (j = 0; j < 5 && num >= 0; j++)
+		printf("0\n");
 
-{
+		return (0);
 
-while (num >= coins[j])
+	}
 
-{
-result++;
-num -= coins[j];
-}
-}
+	for (j = 0; j < 5 && num >= 0; j++)
+
+	{
+		while (num >= coins[j])
+
+		{
+		result++;
+
+		num -= coins[j];
+		}
+	}
 printf("%d\n", result);
-
-return (0);
-
-}
-
-
-
-/**
-* main - Print the name of the program
-* @argc: Count arguments
-* @argv: Arguments
-*
-* Return: Always 0 (Success)
-*/
-
-
-int main(int argc, char *argv[])
-
-
-{
-
-
-/*Declaring variables*/
-int count;
-int sum = 0;
-
-
-count = 1;
-while (count < argc) /*Goes through the whole array*/
-{
-if (check_num(argv[count]))
-
-{
-str_to_int = atoi(argv[count]); /*ATOI --> convert string to int*/
-sum += str_to_int;
-}
-
-
-/*Condition if one of the number contains symbols that are not digits*/
-else
-{
-printf("Error\n");
-return (1);
-}
-
-count++;
-}
-
-
-printf("%d\n", sum); /*print sum*/
-
 return (0);
 }
